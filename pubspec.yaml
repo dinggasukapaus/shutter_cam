@@ -62,6 +62,7 @@ flutter:
     # - images/a_dot_burr.jpeg
     - assets/backgrounds/bg1.png
     - assets/backgrounds/welcom.png
+    - assets/icons/photo.png
     # - icon/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
