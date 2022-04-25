@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shutter_cam/main_page/bottomNavigate.dart';
+import 'package:shutter_cam/welcome_screen/register.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -80,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                                     filled: true,
                                     fillColor: Colors.white,
                                     border: OutlineInputBorder(),
-                                    labelText: 'Email',
+                                    labelText: 'Password',
                                   ),
                                 ),
                                 SizedBox(
@@ -92,10 +94,11 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   child: Text('Login'),
                                   onPressed: () {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => LoginPage()));
+                                            builder: (context) =>
+                                                BottomNavigate()));
                                   },
                                 ),
                                 SizedBox(
@@ -124,8 +127,25 @@ class _LoginPageState extends State<LoginPage> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("Belum memiliki akun ?"),
-                                    Text("Daftar disini"),
+                                    Text(
+                                      "Belum memiliki akun ?",
+                                    ),
+                                    InkWell(
+                                      child: Text(
+                                        "Daftar disini",
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(225, 208, 91, 1),
+                                        ),
+                                      ),
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => Register()),
+                                        );
+                                      },
+                                    ),
                                   ],
                                 )
                               ],

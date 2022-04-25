@@ -54,17 +54,21 @@ class Splash extends StatelessWidget {
             Positioned(
               bottom: 0,
               child: Container(
+                height: 100,
                 color: Colors.white,
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(20),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      // minimumSize: const Size.fromHeight(
-                      //     50), // fromHeight use double.infinity as width and 40 is the height
-                      ),
-                  child: Text('Login'),
+                    primary: Color.fromRGBO(76, 219, 196, 1),
+                    // minimumSize: const Size.fromHeight(
+                    //     50), // fromHeight use double.infinity as width and 40 is the height
+                  ),
+                  child: Text('Ayo Mulai!',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
                   onPressed: () {
-                    Navigator.push(context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                 ),
