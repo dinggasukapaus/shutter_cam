@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/cart.dart';
+import 'package:shutter_cam/main_page/rentMore.dart';
 
 class Camera extends StatefulWidget {
   const Camera({Key? key}) : super(key: key);
@@ -42,6 +43,7 @@ class _CameraState extends State<Camera> {
                         Icons.favorite,
                         color: Colors.red,
                       ),
+                      // aksi untuk favorite
                       onTap: () {
                         Navigator.push(
                           context,
@@ -51,7 +53,13 @@ class _CameraState extends State<Camera> {
                     ),
                   ],
                 ),
-                onTap: () {},
+                // aksi untuk card
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RentMore()),
+                  );
+                },
                 leading: ConstrainedBox(
                   constraints: BoxConstraints(
                     minWidth: 150,
