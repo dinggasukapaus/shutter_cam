@@ -11,171 +11,278 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int currentIndex = 0;
-  final screens = [
-    Camera(),
-    Profile(),
-  ];
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        shadowColor: Colors.transparent,
-        backgroundColor: Color.fromRGBO(76, 219, 196, 1),
-        leading: Padding(
-          padding: EdgeInsets.only(
-            left: 18.0,
-            top: 12.0,
-            bottom: 12.0,
-            right: 12.0,
-          ),
-          child: Icon(
-            Icons.menu,
-            color: Colors.black,
-            size: 30.0,
-          ),
-        ),
-        actions: [
+        body: SafeArea(
+      child: Column(
+        children: [
           Row(
             children: [
-              Text("user"),
-              IconButton(
-                  icon: Image.asset(
-                    'assets/icons/gamer.png',
-                    height: 30.0,
-                    width: 30.0,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const Profile()),
-                    );
-                  }),
-            ],
-          ),
-          SizedBox(
-            width: 18.0,
-          )
-        ],
-      ),
-      body: Stack(
-        children: [
-          Container(
-            height: size.height * .4,
-            color: Color.fromRGBO(76, 219, 196, 1),
-          ),
-          Column(
-            children: [
               Container(
-                  height: 80,
-                  child: Row(
-                    children: [Text("")],
-                  )),
+                padding: const EdgeInsets.all(24),
+                color: const Color.fromRGBO(76, 219, 196, 1),
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 40,
+                              height: 40,
+                              child: Image.asset(
+                                'assets/icons/photo.png',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              "Shutter",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const Text(
+                              ".cam",
+                              style: TextStyle(
+                                color: Color(0xFFFFD05B),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            const Text(
+                              "User123",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Image.asset(
+                              'assets/icons/gamer.png',
+                              height: 30.0,
+                              width: 30.0,
+                              fit: BoxFit.cover,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            color: Colors.white,
+                            height: 50,
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20, top: 5, bottom: 5),
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/icons/search.png',
+                                  height: 30.0,
+                                  width: 30.0,
+                                  fit: BoxFit.cover,
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Flexible(
+                                  child: Container(
+                                    height: 30,
+                                    child: const TextField(
+                                      enableSuggestions: false,
+                                      autofocus: false,
+                                      autocorrect: false,
+                                      decoration: InputDecoration(
+                                          border: InputBorder.none,
+                                          hintText: 'Hi, apa yang kamu cari?'),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 60,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: GridView.count(
-              mainAxisSpacing: 20,
-              crossAxisSpacing: 20,
-              primary: false,
-              crossAxisCount: 2,
-              children: [
-                Card(
-                  elevation: 4,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+          Container(
+              padding: const EdgeInsets.all(24),
+              transform: Matrix4.translationValues(0.0, -60.0, 0.0),
+              child: Column(
+                children: [
+                  Row(
                     children: [
-                      GestureDetector(
-                        child: Image.asset(
-                          "assets/images/camera.png",
-                          height: 100,
-                          width: 100,
+                      Expanded(
+                        child: Card(
+                          elevation: 2,
+                          child: Container(
+                            padding: const EdgeInsets.all(24),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  child: Image.asset(
+                                    "assets/images/camera.png",
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
+                                  },
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("Kamera"),
+                              ],
+                            ),
+                          ),
                         ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Camera()),
-                          );
-                        },
                       ),
-                      Text("Kamera"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Card(
+                          elevation: 2,
+                          child: Container(
+                            padding: const EdgeInsets.all(24),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  child: Image.asset(
+                                    "assets/images/camera-drone.png",
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
+                                  },
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("Drone"),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
                     children: [
-                      GestureDetector(
-                        child: Image.asset(
-                          "assets/images/camera-drone.png",
-                          height: 100,
-                          width: 100,
+                      Expanded(
+                        child: Card(
+                          elevation: 2,
+                          child: Container(
+                            padding: const EdgeInsets.all(24),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  child: Image.asset(
+                                    "assets/images/flash.png",
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
+                                  },
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("Flash"),
+                              ],
+                            ),
+                          ),
                         ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Camera()),
-                          );
-                        },
                       ),
-                      Text("Drone"),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Card(
+                          elevation: 2,
+                          child: Container(
+                            padding: const EdgeInsets.all(24),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                GestureDetector(
+                                  child: Image.asset(
+                                    "assets/images/camera-tripod.png",
+                                    height: 100,
+                                    width: 100,
+                                  ),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Camera()),
+                                    );
+                                  },
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text("Tripod"),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child: Image.asset(
-                          "assets/images/flash.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Camera()),
-                          );
-                        },
-                      ),
-                      Text("Flash"),
-                    ],
-                  ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        child: Image.asset(
-                          "assets/images/camera-tripod.png",
-                          height: 100,
-                          width: 100,
-                        ),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Camera()),
-                          );
-                        },
-                      ),
-                      Text("Tripod"),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
+                ],
+              ))
         ],
       ),
-    );
+    ));
   }
 }
