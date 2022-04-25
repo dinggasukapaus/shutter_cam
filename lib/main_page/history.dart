@@ -36,7 +36,7 @@ class _HistoryState extends State<History> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     GestureDetector(
-                      child: Icon(
+                      child: const Icon(
                         Icons.favorite,
                         color: Colors.red,
                       ),
