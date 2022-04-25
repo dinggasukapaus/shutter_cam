@@ -11,51 +11,55 @@ class _CameraState extends State<Camera> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Container(
-                // we will give media query height
-                // double.infinity make it big as my parent allows
-                // while MediaQuery make it big as per the screen
-
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                color: Color.fromRGBO(76, 219, 196, 1),
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                child: Column(
+      appBar: AppBar(
+        centerTitle: true,
+        elevation: 0.0,
+        shadowColor: Colors.transparent,
+        backgroundColor: Color.fromRGBO(76, 219, 196, 1),
+        title: Text("History Order"),
+      ),
+      body: ListView(
+        children: <Widget>[
+          SizedBox(
+            height: 150.0,
+            width: 100.0,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              margin: EdgeInsets.all(30),
+              elevation: 4,
+              child: ListTile(
+                isThreeLine: true,
+                title: Text("Canon EOS 1300D"),
+                subtitle: Text("340.000"),
+                trailing: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    SizedBox(height: 50),
-                    Row(
-                      children: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.black,
-                            size: 30,
-                          ),
-                          onPressed: () => Navigator.of(context).pop(),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Image.asset(
-                          'assets/icons/photo.png',
-                          width: 100,
-                          height: 100,
-                        ),
-                      ],
+                    Text("3000.00"),
+                    GestureDetector(
+                      child: Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                      onTap: () {},
                     ),
                   ],
                 ),
+                onTap: () {},
+                leading: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minWidth: 150,
+                    minHeight: 100,
+                    maxWidth: 150,
+                    maxHeight: 100,
+                  ),
+                  child: Image.asset("assets/images/camera1.jpg",
+                      fit: BoxFit.cover),
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

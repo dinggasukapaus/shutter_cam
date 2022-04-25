@@ -18,8 +18,47 @@ class _HistoryState extends State<History> {
         backgroundColor: Color.fromRGBO(76, 219, 196, 1),
         title: Text("History Order"),
       ),
-      body: Column(
-        children: [Container()],
+      body: ListView(
+        children: <Widget>[
+          SizedBox(
+            height: 150.0,
+            width: 100.0,
+            child: Card(
+              semanticContainer: true,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              margin: EdgeInsets.all(30),
+              elevation: 4,
+              child: ListTile(
+                isThreeLine: true,
+                title: Text("Canon EOS 1300D"),
+                subtitle: Text("340.000"),
+                trailing: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    GestureDetector(
+                      child: Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      ),
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                onTap: () {},
+                leading: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minWidth: 150,
+                    minHeight: 100,
+                    maxWidth: 150,
+                    maxHeight: 100,
+                  ),
+                  child: Image.asset("assets/images/camera1.jpg",
+                      fit: BoxFit.cover),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
