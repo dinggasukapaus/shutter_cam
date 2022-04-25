@@ -88,12 +88,20 @@ class _DashboardState extends State<Dashboard> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        "assets/images/camera.png",
-                        height: 128,
-                        width: 128,
+                      GestureDetector(
+                        child: Image.asset(
+                          "assets/images/camera.png",
+                          height: 100,
+                          width: 100,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Camera()),
+                          );
+                        },
                       ),
-                      Text("Kamera")
+                      Text("Kamera"),
                     ],
                   ),
                 ),
@@ -102,14 +110,20 @@ class _DashboardState extends State<Dashboard> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        "assets/images/camera.png",
-                        height: 128,
-                        width: 128,
+                      GestureDetector(
+                        child: Image.asset(
+                          "assets/images/camera-drone.png",
+                          height: 100,
+                          width: 100,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Camera()),
+                          );
+                        },
                       ),
-                      Text(
-                        "Drone",
-                      )
+                      Text("Drone"),
                     ],
                   ),
                 ),
@@ -118,12 +132,20 @@ class _DashboardState extends State<Dashboard> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        "assets/images/camera.png",
-                        height: 128,
-                        width: 128,
+                      GestureDetector(
+                        child: Image.asset(
+                          "assets/images/flash.png",
+                          height: 100,
+                          width: 100,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Camera()),
+                          );
+                        },
                       ),
-                      Text("Kamera")
+                      Text("Flash"),
                     ],
                   ),
                 ),
@@ -132,12 +154,20 @@ class _DashboardState extends State<Dashboard> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        "assets/images/camera.png",
-                        height: 128,
-                        width: 128,
+                      GestureDetector(
+                        child: Image.asset(
+                          "assets/images/camera-tripod.png",
+                          height: 100,
+                          width: 100,
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Camera()),
+                          );
+                        },
                       ),
-                      Text("Kamera")
+                      Text("Tripod"),
                     ],
                   ),
                 ),
