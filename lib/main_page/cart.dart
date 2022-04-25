@@ -20,112 +20,188 @@ class _CartState extends State<Cart> {
         backgroundColor: Color.fromRGBO(76, 219, 196, 1),
         title: Text("Your Cart"),
       ),
-      body: ListView(
-        children: <Widget>[
-          SizedBox(
-            height: 150.0,
-            width: 100.0,
-            child: Card(
-              semanticContainer: true,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              margin: EdgeInsets.all(30),
-              elevation: 4,
-              child: ListTile(
-                isThreeLine: true,
-                title: Text("Canon EOS 1300D"),
-                subtitle: Text("340.000"),
-                trailing: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Text("3000.00"),
-                    GestureDetector(
-                      child: Icon(
-                        Icons.delete,
-                        color: Colors.red,
-                      ),
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Cart()),
-                        );
-                      },
+      body: Container(
+        color: const Color(0xfff1f5f9),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        child: ListView(
+          children: [
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 70,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Image.asset(
+                              "assets/images/camera1.jpg",
+                              fit: BoxFit.cover,
+                              height: MediaQuery.of(context).size.height,
+                              width: MediaQuery.of(context).size.width,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Canon EOS 1300D",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "340.000",
+                              style: TextStyle(fontSize: 13),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "2 Hari",
+                              style: TextStyle(
+                                color: Color(0xFF4CDBC4),
+                                fontSize: 11,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                      size: 18,
                     ),
                   ],
                 ),
-                onTap: () {},
-                leading: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minWidth: 150,
-                    minHeight: 100,
-                    maxWidth: 150,
-                    maxHeight: 100,
-                  ),
-                  child: Image.asset("assets/images/camera1.jpg",
-                      fit: BoxFit.cover),
-                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 150.0,
-            width: 100.0,
-            child: Card(
-              semanticContainer: true,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              margin: EdgeInsets.all(30),
-              elevation: 4,
-              child: ListTile(
-                isThreeLine: true,
-                title: Text("Canon EOS 1300D"),
-                subtitle: Text("340.000"),
-                trailing: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Text("3000.00"),
-                    GestureDetector(
-                      child: Icon(
-                        Icons.delete_rounded,
-                        color: Colors.red,
-                      ),
-                      onTap: () {},
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 100,
+                          height: 70,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: Image.asset(
+                              "assets/images/camera1.jpg",
+                              fit: BoxFit.cover,
+                              height: MediaQuery.of(context).size.height,
+                              width: MediaQuery.of(context).size.width,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Canon EOS 1300D",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "340.000",
+                              style: TextStyle(fontSize: 13),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "2 Hari",
+                              style: TextStyle(
+                                color: Color(0xFF4CDBC4),
+                                fontSize: 11,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                      size: 18,
                     ),
                   ],
                 ),
-                onTap: () {},
-                leading: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minWidth: 150,
-                    minHeight: 100,
-                    maxWidth: 150,
-                    maxHeight: 100,
-                  ),
-                  child: Image.asset("assets/images/camera1.jpg",
-                      fit: BoxFit.cover),
-                ),
               ),
             ),
-          ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              color: Colors.white,
+            const SizedBox(
+              height: 24,
+            ),
+            SizedBox(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(10),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   primary: Color.fromRGBO(76, 219, 196, 1),
-                  // minimumSize: const Size.fromHeight(
-                  //     50), // fromHeight use double.infinity as width and 40 is the height
                 ),
-                child: Text('Lanjut pembayaran'),
+                child: const Text('Lanjut pembayaran'),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Profile()));
                 },
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
