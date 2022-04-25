@@ -116,10 +116,10 @@ class _ProfileState extends State<Profile> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             "Verified Your Member",
                             style: TextStyle(
                               fontSize: 15,
@@ -128,13 +128,11 @@ class _ProfileState extends State<Profile> {
                           ),
                         ],
                       ),
-                      Container(
-                        child: Image.asset(
-                          'assets/icons/right-chevron.png',
-                          height: 30.0,
-                          width: 30.0,
-                          fit: BoxFit.cover,
-                        ),
+                      Image.asset(
+                        'assets/icons/right-chevron.png',
+                        height: 30.0,
+                        width: 30.0,
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
@@ -143,7 +141,7 @@ class _ProfileState extends State<Profile> {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(24),
+            padding: const EdgeInsets.all(24),
             child: Column(
               children: [
                 Container(
@@ -160,18 +158,16 @@ class _ProfileState extends State<Profile> {
                     children: [
                       Row(
                         children: [
-                          Container(
-                            child: Image.asset(
-                              'assets/icons/list.png',
-                              height: 30.0,
-                              width: 30.0,
-                              fit: BoxFit.cover,
-                            ),
+                          Image.asset(
+                            'assets/icons/list.png',
+                            height: 30.0,
+                            width: 30.0,
+                            fit: BoxFit.cover,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             "Terms and Condition",
                             style: TextStyle(
                               fontSize: 15,
@@ -180,18 +176,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ],
                       ),
-                      Container(
-                        child: Image.asset(
-                          'assets/icons/right-chevron.png',
-                          height: 30.0,
-                          width: 30.0,
-                          fit: BoxFit.cover,
-                        ),
+                      Image.asset(
+                        'assets/icons/right-chevron.png',
+                        height: 30.0,
+                        width: 30.0,
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 14,
                 ),
                 Container(
@@ -216,10 +210,10 @@ class _ProfileState extends State<Profile> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             "Privacy Policy",
                             style: TextStyle(
                               fontSize: 15,
@@ -228,18 +222,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ],
                       ),
-                      Container(
-                        child: Image.asset(
-                          'assets/icons/right-chevron.png',
-                          height: 30.0,
-                          width: 30.0,
-                          fit: BoxFit.cover,
-                        ),
+                      Image.asset(
+                        'assets/icons/right-chevron.png',
+                        height: 30.0,
+                        width: 30.0,
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 14,
                 ),
                 Container(
@@ -264,10 +256,10 @@ class _ProfileState extends State<Profile> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             "Setting",
                             style: TextStyle(
                               fontSize: 15,
@@ -276,18 +268,16 @@ class _ProfileState extends State<Profile> {
                           ),
                         ],
                       ),
-                      Container(
-                        child: Image.asset(
-                          'assets/icons/right-chevron.png',
-                          height: 30.0,
-                          width: 30.0,
-                          fit: BoxFit.cover,
-                        ),
+                      Image.asset(
+                        'assets/icons/right-chevron.png',
+                        height: 30.0,
+                        width: 30.0,
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 14,
                 ),
                 Container(
@@ -312,10 +302,10 @@ class _ProfileState extends State<Profile> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             "Log Out",
                             style: TextStyle(
                               fontSize: 15,
@@ -324,13 +314,11 @@ class _ProfileState extends State<Profile> {
                           ),
                         ],
                       ),
-                      Container(
-                        child: Image.asset(
-                          'assets/icons/right-chevron.png',
-                          height: 30.0,
-                          width: 30.0,
-                          fit: BoxFit.cover,
-                        ),
+                      Image.asset(
+                        'assets/icons/right-chevron.png',
+                        height: 30.0,
+                        width: 30.0,
+                        fit: BoxFit.cover,
                       ),
                     ],
                   ),
