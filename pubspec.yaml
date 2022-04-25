@@ -63,6 +63,18 @@ flutter:
     - assets/backgrounds/bg1.png
     - assets/backgrounds/welcom.png
     - assets/icons/photo.png
+    - assets/icons/gamer.png
+    - assets/icons/cart.png
+    - assets/icons/home.png
+    - assets/icons/My order.png
+    - assets/icons/profile.png
+    - assets/images/camera.png
+    - assets/images/camera-tripod.png
+    - assets/images/drone.png
+    - assets/images/flash.png
+    - assets/images/koceng.jpg
+    - assets/images/kopi.jpg
+    - assets/images/lampu.jpg
     # - icon/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
