@@ -24,11 +24,11 @@ class _LoginPageState extends State<LoginPage> {
 
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                color: Color.fromRGBO(76, 219, 196, 1),
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                color: const Color.fromRGBO(76, 219, 196, 1),
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -41,25 +41,25 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 50),
+                      margin: const EdgeInsets.only(top: 50),
                       child: Column(
                         children: <Widget>[
-                          Text(
+                          const Text(
                             "selamat datang",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Text(
+                          const Text(
                             "Silahkan masukkan email dan password akun anda",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 20),
+                            margin: const EdgeInsets.only(top: 20),
                             child: Column(
                               children: <Widget>[
                                 TextFormField(
@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                                     labelText: 'Email',
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 TextFormField(
@@ -85,26 +85,26 @@ class _LoginPageState extends State<LoginPage> {
                                     labelText: 'Password',
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     minimumSize: const Size.fromHeight(50),
                                   ),
-                                  child: Text('Login'),
+                                  child: const Text('Login'),
                                   onPressed: () {
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                BottomNavigate()));
+                                                const BottomNavigate()));
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
-                                Row(children: <Widget>[
+                                Row(children: const <Widget>[
                                   Expanded(
                                       child: Divider(
                                     color: Colors.black,
@@ -121,17 +121,17 @@ class _LoginPageState extends State<LoginPage> {
                                     color: Colors.black,
                                   )),
                                 ]),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Belum memiliki akun ?",
                                     ),
                                     InkWell(
-                                      child: Text(
+                                      child: const Text(
                                         "Daftar disini",
                                         style: TextStyle(
                                           color:

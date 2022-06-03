@@ -12,7 +12,7 @@ class _RentMoreState extends State<RentMore> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black, //change your color here
         ),
         elevation: 0.0,

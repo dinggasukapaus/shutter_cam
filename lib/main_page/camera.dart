@@ -17,8 +17,8 @@ class _CameraState extends State<Camera> {
         centerTitle: true,
         elevation: 0.0,
         shadowColor: Colors.transparent,
-        backgroundColor: Color.fromRGBO(76, 219, 196, 1),
-        title: Text("Kamera"),
+        backgroundColor: const Color.fromRGBO(76, 219, 196, 1),
+        title: const Text("Kamera"),
       ),
       body: ListView(
         children: <Widget>[
@@ -28,18 +28,18 @@ class _CameraState extends State<Camera> {
             child: Card(
               semanticContainer: true,
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              margin: EdgeInsets.all(30),
+              margin: const EdgeInsets.all(30),
               elevation: 4,
               child: ListTile(
                 isThreeLine: true,
-                title: Text("Canon EOS 1300D"),
-                subtitle: Text("340.000"),
+                title: const Text("Canon EOS 1300D"),
+                subtitle: const Text("340.000"),
                 trailing: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Text("3000.00"),
+                    const Text("3000.00"),
                     GestureDetector(
-                      child: Icon(
+                      child: const Icon(
                         Icons.favorite,
                         color: Colors.red,
                       ),
@@ -47,7 +47,7 @@ class _CameraState extends State<Camera> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Cart()),
+                          MaterialPageRoute(builder: (context) => const Cart()),
                         );
                       },
                     ),
@@ -57,11 +57,11 @@ class _CameraState extends State<Camera> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RentMore()),
+                    MaterialPageRoute(builder: (context) => const RentMore()),
                   );
                 },
                 leading: ConstrainedBox(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minWidth: 150,
                     minHeight: 100,
                     maxWidth: 150,
@@ -79,18 +79,18 @@ class _CameraState extends State<Camera> {
             child: Card(
               semanticContainer: true,
               clipBehavior: Clip.antiAliasWithSaveLayer,
-              margin: EdgeInsets.all(30),
+              margin: const EdgeInsets.all(30),
               elevation: 4,
               child: ListTile(
                 isThreeLine: true,
-                title: Text("Canon EOS 1300D"),
-                subtitle: Text("340.000"),
+                title: const Text("Canon EOS 1300D"),
+                subtitle: const Text("340.000"),
                 trailing: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    Text("3000.00"),
+                    const Text("3000.00"),
                     GestureDetector(
-                      child: Icon(
+                      child: const Icon(
                         Icons.favorite,
                         color: Colors.red,
                       ),
@@ -100,7 +100,7 @@ class _CameraState extends State<Camera> {
                 ),
                 onTap: () {},
                 leading: ConstrainedBox(
-                  constraints: BoxConstraints(
+                  constraints: const BoxConstraints(
                     minWidth: 150,
                     minHeight: 100,
                     maxWidth: 150,

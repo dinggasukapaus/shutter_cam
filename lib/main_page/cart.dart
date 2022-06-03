@@ -17,8 +17,8 @@ class _CartState extends State<Cart> {
         centerTitle: true,
         elevation: 0.0,
         shadowColor: Colors.transparent,
-        backgroundColor: Color.fromRGBO(76, 219, 196, 1),
-        title: Text("Your Cart"),
+        backgroundColor: const Color.fromRGBO(76, 219, 196, 1),
+        title: const Text("Your Cart"),
       ),
       body: Container(
         color: const Color(0xfff1f5f9),
@@ -103,7 +103,7 @@ class _CartState extends State<Cart> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
@@ -191,12 +191,12 @@ class _CartState extends State<Cart> {
               width: MediaQuery.of(context).size.width,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Color.fromRGBO(76, 219, 196, 1),
+                  primary: const Color.fromRGBO(76, 219, 196, 1),
                 ),
                 child: const Text('Lanjut pembayaran'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Profile()));
+                      MaterialPageRoute(builder: (context) => const Profile()));
                 },
               ),
             ),

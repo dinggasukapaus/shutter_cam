@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:shutter_cam/main_page/camera.dart';
 import 'package:shutter_cam/main_page/profile.dart';
 import 'package:shutter_cam/main_page/dashboard.dart';
 import 'package:shutter_cam/main_page/history.dart';
 import 'package:shutter_cam/main_page/cart.dart';
-import 'package:shutter_cam/main_page/profile.dart';
 
 class BottomNavigate extends StatefulWidget {
   const BottomNavigate({Key? key}) : super(key: key);
@@ -17,10 +15,10 @@ class BottomNavigate extends StatefulWidget {
 class _BottomNavigateState extends State<BottomNavigate> {
   int currentIndex = 0;
   final screens = [
-    Dashboard(),
-    History(),
-    Cart(),
-    Profile(),
+    const Dashboard(),
+    const History(),
+    const Cart(),
+    const Profile(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -78,7 +76,7 @@ class _BottomNavigateState extends State<BottomNavigate> {
                 width: 30.0,
               ),
               label: 'home',
-              backgroundColor: Color.fromRGBO(225, 208, 91, 1),
+              backgroundColor: const Color.fromRGBO(225, 208, 91, 1),
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
@@ -87,7 +85,7 @@ class _BottomNavigateState extends State<BottomNavigate> {
                 width: 30.0,
               ),
               label: 'History',
-              backgroundColor: Color.fromRGBO(225, 208, 91, 1),
+              backgroundColor: const Color.fromRGBO(225, 208, 91, 1),
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
@@ -96,7 +94,7 @@ class _BottomNavigateState extends State<BottomNavigate> {
                 width: 30.0,
               ),
               label: 'Cart',
-              backgroundColor: Color.fromRGBO(225, 208, 91, 1),
+              backgroundColor: const Color.fromRGBO(225, 208, 91, 1),
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
@@ -105,7 +103,7 @@ class _BottomNavigateState extends State<BottomNavigate> {
                 width: 30.0,
               ),
               label: 'Profile',
-              backgroundColor: Color.fromRGBO(225, 208, 91, 1),
+              backgroundColor: const Color.fromRGBO(225, 208, 91, 1),
             ),
           ]),
     );

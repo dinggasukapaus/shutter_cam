@@ -29,13 +29,13 @@ class _SetAddresState extends State<SetAddres> {
           shadowColor: Colors.transparent,
           backgroundColor: const Color.fromRGBO(76, 219, 196, 1),
         ),
-        body: Container(
+        body: SizedBox(
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
               // baris 1 alamat
               Row(
-                children: [
+                children: const [
                   Padding(
                     padding:
                         EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0),
@@ -48,7 +48,7 @@ class _SetAddresState extends State<SetAddres> {
                   ),
                 ],
               ),
-              Divider(
+              const Divider(
                 color: Colors.black,
               ),
               Padding(
@@ -59,7 +59,7 @@ class _SetAddresState extends State<SetAddres> {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           "kab.Banyuwangi",
                           style: TextStyle(
@@ -85,7 +85,7 @@ class _SetAddresState extends State<SetAddres> {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
+                      children: const [
                         Text(
                           "Kabupaten",
                           style: TextStyle(
@@ -112,12 +112,12 @@ class _SetAddresState extends State<SetAddres> {
                   ],
                 ),
               ),
-              Divider(
+              const Divider(
                 color: Colors.black,
               ),
               // baris 3
               Row(
-                children: [
+                children: const [
                   Padding(
                     padding:
                         EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0),
@@ -131,12 +131,12 @@ class _SetAddresState extends State<SetAddres> {
                   ),
                 ],
               ),
-              Divider(
+              const Divider(
                 color: Colors.black,
               ),
               // baris 4
               Row(
-                children: [
+                children: const [
                   Padding(
                     padding:
                         EdgeInsets.only(top: 10.0, bottom: 10.0, left: 20.0),
@@ -152,7 +152,7 @@ class _SetAddresState extends State<SetAddres> {
               // baris 5 gmaps
               Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 300,
                     child: GoogleMap(
@@ -167,7 +167,7 @@ class _SetAddresState extends State<SetAddres> {
               ),
               // baris 6
               Row(
-                children: [
+                children: const [
                   Padding(
                     padding:
                         EdgeInsets.only(top: 10.0, bottom: 10.0, left: 30.0),
@@ -209,21 +209,21 @@ class _SetAddresState extends State<SetAddres> {
                   ),
                 ],
               ),
-              Divider(
+              const Divider(
                 color: Colors.black,
               ),
               Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 100,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: Color.fromRGBO(225, 208, 91, 1),
+                        primary: const Color.fromRGBO(225, 208, 91, 1),
                         // minimumSize: const Size.fromHeight(
                         //     50), // fromHeight use double.infinity as width and 40 is the height
                       ),
-                      child: Text('Simpan',
+                      child: const Text('Simpan',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
@@ -231,7 +231,7 @@ class _SetAddresState extends State<SetAddres> {
                           )),
                       onPressed: () {
                         Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Cart()));
+                            MaterialPageRoute(builder: (context) => const Cart()));
                       },
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shutter_cam/main_page/memberV1.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -92,40 +93,48 @@ class _ProfileState extends State<Profile> {
                   ),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Color(0xFF3DF6D9),
+                    color: const Color(0xFF3DF6D9),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.1),
                         spreadRadius: 1,
                         blurRadius: 5,
-                        offset: Offset(2, 3),
+                        offset: const Offset(2, 3),
                       ),
                     ],
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                            child: Image.asset(
-                              'assets/icons/medal.png',
-                              height: 30.0,
-                              width: 30.0,
-                              fit: BoxFit.cover,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const MemberV1()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Container(
+                              child: Image.asset(
+                                'assets/icons/medal.png',
+                                height: 30.0,
+                                width: 30.0,
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            "Verified Your Member",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
+                            const SizedBox(
+                              width: 10,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              "Verified Your Member",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Image.asset(
                         'assets/icons/right-chevron.png',

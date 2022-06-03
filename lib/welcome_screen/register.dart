@@ -13,8 +13,9 @@ class _RegisterState extends State<Register> {
   void _toggleObscured() {
     setState(() {
       _obscured = !_obscured;
-      if (textFieldFocusNode.hasPrimaryFocus)
-        return; // If focus is on text field, dont unfocus
+      if (textFieldFocusNode.hasPrimaryFocus) {
+        return;
+      } // If focus is on text field, dont unfocus
       textFieldFocusNode.canRequestFocus =
           false; // Prevents focus if tap on eye
     });
@@ -34,15 +35,15 @@ class _RegisterState extends State<Register> {
 
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                color: Color.fromRGBO(76, 219, 196, 1),
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                color: const Color.fromRGBO(76, 219, 196, 1),
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Row(
                       children: [
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.arrow_back,
                             color: Colors.black,
                             size: 30,
@@ -63,25 +64,25 @@ class _RegisterState extends State<Register> {
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 50),
+                      margin: const EdgeInsets.only(top: 50),
                       child: Column(
                         children: <Widget>[
-                          Text(
+                          const Text(
                             "Daftar Akun",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 30),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
-                          Text(
+                          const Text(
                             "Lengkapi data berikut !",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 20),
+                            margin: const EdgeInsets.only(top: 20),
                             child: Column(
                               children: <Widget>[
                                 TextFormField(
@@ -97,7 +98,7 @@ class _RegisterState extends State<Register> {
                                     labelText: 'Username',
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 TextFormField(
@@ -113,7 +114,7 @@ class _RegisterState extends State<Register> {
                                     labelText: 'Email',
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 TextField(
@@ -128,7 +129,7 @@ class _RegisterState extends State<Register> {
                                         true, // Needed for adding a fill color
                                     fillColor: Colors.white,
                                     isDense: true, // Reduces height a bit
-                                    border: OutlineInputBorder(
+                                    border: const OutlineInputBorder(
                                       borderSide: BorderSide
                                           .none, // Apply corner radius
                                     ),
@@ -148,7 +149,7 @@ class _RegisterState extends State<Register> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 TextField(
@@ -163,7 +164,7 @@ class _RegisterState extends State<Register> {
                                         true, // Needed for adding a fill color
                                     fillColor: Colors.white,
                                     isDense: true, // Reduces height a bit
-                                    border: OutlineInputBorder(
+                                    border: const OutlineInputBorder(
                                       borderSide: BorderSide
                                           .none, // Apply corner radius
                                     ),
@@ -183,15 +184,15 @@ class _RegisterState extends State<Register> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 40,
                                 ),
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     minimumSize: const Size.fromHeight(50),
-                                    primary: Color.fromRGBO(225, 208, 91, 1),
+                                    primary: const Color.fromRGBO(225, 208, 91, 1),
                                   ),
-                                  child: Text(
+                                  child: const Text(
                                     'Daftar Sekarang',
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -202,7 +203,7 @@ class _RegisterState extends State<Register> {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                            builder: (context) => LoginPage()));
+                                            builder: (context) => const LoginPage()));
                                   },
                                 ),
                               ],

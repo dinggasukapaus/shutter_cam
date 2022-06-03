@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/camera.dart';
-import 'package:shutter_cam/main_page/profile.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -106,10 +105,10 @@ class _DashboardState extends State<Dashboard> {
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                Flexible(
-                                  child: Container(
+                                const Flexible(
+                                  child: SizedBox(
                                     height: 30,
-                                    child: const TextField(
+                                    child: TextField(
                                       enableSuggestions: false,
                                       autofocus: false,
                                       autocorrect: false,
@@ -158,20 +157,20 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Kamera"),
+                                const Text("Kamera"),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Expanded(
@@ -192,14 +191,14 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Drone"),
+                                const Text("Drone"),
                               ],
                             ),
                           ),
@@ -207,7 +206,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -230,20 +229,20 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Flash"),
+                                const Text("Flash"),
                               ],
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Expanded(
@@ -264,14 +263,14 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Camera()),
+                                          builder: (context) => const Camera()),
                                     );
                                   },
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text("Tripod"),
+                                const Text("Tripod"),
                               ],
                             ),
                           ),

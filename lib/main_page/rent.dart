@@ -22,11 +22,11 @@ class _RentState extends State<Rent> {
 
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              color: Color.fromRGBO(76, 219, 196, 1),
-              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+              color: const Color.fromRGBO(76, 219, 196, 1),
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
               child: Column(
                 children: <Widget>[
-                  SizedBox(height: 50),
+                  const SizedBox(height: 50),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -36,10 +36,10 @@ class _RentState extends State<Rent> {
                         width: 100,
                         height: 100,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
-                      Text(
+                      const Text(
                         "Shutter.cam",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 30),
@@ -48,7 +48,7 @@ class _RentState extends State<Rent> {
                   ),
                   Center(
                     child: Container(
-                      margin: EdgeInsets.only(top: 110),
+                      margin: const EdgeInsets.only(top: 110),
                       child: Image.asset(
                         "assets/backgrounds/welcom.png",
                         height: 300,
@@ -63,16 +63,16 @@ class _RentState extends State<Rent> {
               child: Container(
                 color: Colors.white,
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       // minimumSize: const Size.fromHeight(
                       //     50), // fromHeight use double.infinity as width and 40 is the height
                       ),
-                  child: Text('Login'),
+                  child: const Text('Login'),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => RentMore()));
+                        MaterialPageRoute(builder: (context) => const RentMore()));
                   },
                 ),
               ),
