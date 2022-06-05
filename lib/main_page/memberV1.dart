@@ -1,5 +1,8 @@
 // ignore: file_names
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shutter_cam/main_page/camera.dart';
 
 class MemberV1 extends StatefulWidget {
@@ -10,7 +13,20 @@ class MemberV1 extends StatefulWidget {
 }
 
 class _MemberV1State extends State<MemberV1> {
+  File? image;
+
   int currentStep = 0;
+  Future pickImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    if (image == null) return;
+    final imageTemporary = File(image.path);
+    this.image = imageTemporary;
+  }
+
+  Future openCamera() async {
+    final camera = await ImagePicker().pickImage(source: ImageSource.camera);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,14 +166,7 @@ peraturan dari otoritas terkait
                                       height: 100,
                                       width: 100,
                                     ),
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Camera()),
-                                      );
-                                    },
+                                    onTap: () => pickImage(),
                                   ),
                                   const Text("Unggah foto KTP"),
                                 ],
@@ -414,11 +423,11 @@ peraturan dari otoritas terkait
                     children: <Widget>[
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                        children: const [
                           Text("Nomer HP"),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 70,
                       ),
                       SizedBox(
@@ -510,13 +519,8 @@ peraturan dari otoritas terkait
                                 height: 200,
                                 width: 200,
                               ),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Camera()),
-                                );
-                              },
+                              // ketika di tap maka memanggil fungsi pickimage
+                              onTap: () => openCamera(),
                             ),
                           ],
                         )
