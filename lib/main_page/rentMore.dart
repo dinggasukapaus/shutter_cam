@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shutter_cam/main_page/arrangeRental.dart';
 import 'package:shutter_cam/main_page/cart.dart';
 import 'package:shutter_cam/main_page/history.dart';
+import 'package:shutter_cam/main_page/rent.dart';
+import 'package:shutter_cam/main_page/setAddress.dart';
 
 class RentMore extends StatefulWidget {
   const RentMore({Key? key}) : super(key: key);
@@ -273,7 +276,7 @@ class _RentMoreState extends State<RentMore> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const History()));
+                              builder: (context) => const ArrangeRental()));
                     },
                   ),
                 ),
