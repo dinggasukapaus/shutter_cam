@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shutter_cam/main_page/arrangeRental.dart';
 import 'package:shutter_cam/main_page/profile.dart';
 
 class Cart extends StatefulWidget {
@@ -195,8 +196,10 @@ class _CartState extends State<Cart> {
                 ),
                 child: const Text('Lanjut pembayaran'),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Profile()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ArrangeRental()));
                 },
               ),
             ),
