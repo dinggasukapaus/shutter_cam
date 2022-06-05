@@ -17,13 +17,16 @@ class _MemberV1State extends State<MemberV1> {
 
   int currentStep = 0;
   Future pickImage() async {
+    // menggunakan plugin imagepicker fungsi buka gallery
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
     if (image == null) return;
     final imageTemporary = File(image.path);
     this.image = imageTemporary;
   }
 
+  // funsi opencamera
   Future openCamera() async {
+    // menggunakan plugin imagepicker fungsi camera
     final camera = await ImagePicker().pickImage(source: ImageSource.camera);
   }
 
@@ -519,7 +522,7 @@ peraturan dari otoritas terkait
                                 height: 200,
                                 width: 200,
                               ),
-                              // ketika di tap maka memanggil fungsi pickimage
+                              // ketika di tap maka memanggil fungsi opencamera
                               onTap: () => openCamera(),
                             ),
                           ],
