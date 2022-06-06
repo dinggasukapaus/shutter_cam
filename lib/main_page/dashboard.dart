@@ -16,6 +16,9 @@ class _DashboardState extends State<Dashboard> {
   int currentIndex = 0;
   var user = FirebaseAuth.instance.currentUser;
 
+  late String userMail;
+  late String userId;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,7 +71,9 @@ class _DashboardState extends State<Dashboard> {
                           children: [
                             GestureDetector(
                               child: Text(
-                                user!.uid,
+                                '${FirebaseAuth.instance.currentUser!.email}',
+                                // userId = user!.uid,
+                                // userMail = user.email,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,

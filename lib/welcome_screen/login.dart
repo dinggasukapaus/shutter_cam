@@ -11,6 +11,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // controller
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +68,8 @@ class _LoginPageState extends State<LoginPage> {
                             child: Column(
                               children: <Widget>[
                                 TextFormField(
+                                  // menghubungkan email dengan controller
+                                  controller: emailController,
                                   decoration: const InputDecoration(
                                     floatingLabelBehavior:
                                         FloatingLabelBehavior.never,
@@ -78,6 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                                   height: 20,
                                 ),
                                 TextFormField(
+                                  controller: passwordController,
                                   decoration: const InputDecoration(
                                     floatingLabelBehavior:
                                         FloatingLabelBehavior.never,
@@ -96,7 +102,9 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   child: const Text('Login'),
                                   onPressed: () async {
-                                    await AuthServices.signInA();
+                                    await AuthServices.signIn(
+                                        emailController.text,
+                                        passwordController.text);
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(

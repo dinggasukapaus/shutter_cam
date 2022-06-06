@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shutter_cam/services/authService.dart';
 import 'package:shutter_cam/welcome_screen/login.dart';
 
 class Register extends StatefulWidget {
@@ -21,6 +22,9 @@ class _RegisterState extends State<Register> {
     });
   }
 
+  TextEditingController emailController = TextEditingController(text: "");
+  TextEditingController passwordController = TextEditingController(text: "");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +40,8 @@ class _RegisterState extends State<Register> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 color: const Color.fromRGBO(76, 219, 196, 1),
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 child: Column(
                   children: <Widget>[
                     const SizedBox(height: 50),
@@ -102,6 +107,7 @@ class _RegisterState extends State<Register> {
                                   height: 20,
                                 ),
                                 TextFormField(
+                                  controller: emailController,
                                   decoration: const InputDecoration(
                                     floatingLabelBehavior:
                                         FloatingLabelBehavior.never,
@@ -118,6 +124,7 @@ class _RegisterState extends State<Register> {
                                   height: 20,
                                 ),
                                 TextField(
+                                  controller: passwordController,
                                   keyboardType: TextInputType.visiblePassword,
                                   obscureText: _obscured,
                                   focusNode: textFieldFocusNode,
@@ -190,7 +197,8 @@ class _RegisterState extends State<Register> {
                                 ElevatedButton(
                                   style: ElevatedButton.styleFrom(
                                     minimumSize: const Size.fromHeight(50),
-                                    primary: const Color.fromRGBO(225, 208, 91, 1),
+                                    primary:
+                                        const Color.fromRGBO(225, 208, 91, 1),
                                   ),
                                   child: const Text(
                                     'Daftar Sekarang',
@@ -199,11 +207,15 @@ class _RegisterState extends State<Register> {
                                         fontSize: 30,
                                         color: Colors.black),
                                   ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => const LoginPage()));
+                                  onPressed: () async {
+                                    await AuthServices.signUp(
+                                        emailController.text,
+                                        passwordController.text);
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) =>
+                                    //             const LoginPage()));
                                   },
                                 ),
                               ],
