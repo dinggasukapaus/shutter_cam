@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/camera.dart';
+import 'package:shutter_cam/services/authService.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -65,13 +66,18 @@ class _DashboardState extends State<Dashboard> {
                         ),
                         Row(
                           children: [
-                            Text(
-                              user!.uid,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
+                            GestureDetector(
+                              child: Text(
+                                user!.uid,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
+                              onTap: () async {
+                                await AuthServices.signOut();
+                              },
                             ),
                             const SizedBox(
                               width: 5,
