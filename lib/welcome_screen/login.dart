@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/bottomNavigate.dart';
+import 'package:shutter_cam/services/authService.dart';
 import 'package:shutter_cam/welcome_screen/register.dart';
 
 class LoginPage extends StatefulWidget {
@@ -25,7 +26,8 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 color: const Color.fromRGBO(76, 219, 196, 1),
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
                 child: Column(
                   children: <Widget>[
                     const SizedBox(height: 50),
@@ -93,7 +95,8 @@ class _LoginPageState extends State<LoginPage> {
                                     minimumSize: const Size.fromHeight(50),
                                   ),
                                   child: const Text('Login'),
-                                  onPressed: () {
+                                  onPressed: () async {
+                                    await AuthServices.signInA();
                                     Navigator.pushReplacement(
                                         context,
                                         MaterialPageRoute(

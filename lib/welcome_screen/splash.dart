@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shutter_cam/welcome_screen/login.dart';
 
 class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    User? user = Provider.of<User?>(context);
+
     return Scaffold(
       body: Container(
         child: Stack(
@@ -68,8 +72,10 @@ class Splash extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => const LoginPage()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()));
                   },
                 ),
               ),

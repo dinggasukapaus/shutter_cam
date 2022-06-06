@@ -1,3 +1,6 @@
+// ignore_for_file: non_constant_identifier_names
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/camera.dart';
 
@@ -10,6 +13,7 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int currentIndex = 0;
+  var user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +65,8 @@ class _DashboardState extends State<Dashboard> {
                         ),
                         Row(
                           children: [
-                            const Text(
-                              "User123",
+                            Text(
+                              user!.uid,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
