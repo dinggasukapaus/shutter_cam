@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/cart.dart';
 import 'package:shutter_cam/main_page/rentMore.dart';
+import 'package:shutter_cam/services/databaseService.dart';
 
 class Camera extends StatefulWidget {
   const Camera({Key? key}) : super(key: key);
@@ -10,6 +12,9 @@ class Camera extends StatefulWidget {
 }
 
 class _CameraState extends State<Camera> {
+  CollectionReference productCollection =
+      FirebaseFirestore.instance.collection('products');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,17 @@ class _CameraState extends State<Camera> {
         title: const Text("Kamera"),
       ),
       body: ListView(
-        children: <Widget>[
+        children: [
+          FutureBuilder<QuerySnapshot>(
+            future: productCollection.get(),
+            builder: (_, snapshot) {
+              if (snapshot.hasData) {
+              } else {
+                Text("loading");
+              }
+              return Text("nodata");
+            },
+          ),
           SizedBox(
             height: 150.0,
             width: 100.0,
@@ -32,7 +47,7 @@ class _CameraState extends State<Camera> {
               elevation: 4,
               child: ListTile(
                 isThreeLine: true,
-                title: const Text("Canon EOS 1300D"),
+                title: Text("canon"),
                 subtitle: const Text("340.000"),
                 trailing: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -55,6 +70,9 @@ class _CameraState extends State<Camera> {
                 ),
                 // aksi untuk card
                 onTap: () {
+                  // fungsi untuk menambahkan data
+                  DatabaseService.CreateOrUpdateProducts("1",
+                      name: "Canon EOS 1300DE", price: 700000);
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const RentMore()),
