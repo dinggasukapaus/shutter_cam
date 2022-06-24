@@ -14,6 +14,7 @@ class BottomNavigate extends StatefulWidget {
 
 class _BottomNavigateState extends State<BottomNavigate> {
   int currentIndex = 0;
+
   final screens = [
     const Dashboard(),
     const History(),
@@ -24,46 +25,6 @@ class _BottomNavigateState extends State<BottomNavigate> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0.0,
-      //   shadowColor: Colors.transparent,
-      //   backgroundColor: Color.fromRGBO(76, 219, 196, 1),
-      //   leading: Padding(
-      //     padding: EdgeInsets.only(
-      //       left: 18.0,
-      //       top: 12.0,
-      //       bottom: 12.0,
-      //       right: 12.0,
-      //     ),
-      //     child: Icon(
-      //       Icons.menu,
-      //       color: Colors.black,
-      //       size: 30.0,
-      //     ),
-      //   ),
-      //   actions: [
-      //     Row(
-      //       children: [
-      //         Text("user"),
-      //         IconButton(
-      //             icon: Image.asset(
-      //               'assets/icons/gamer.png',
-      //               height: 30.0,
-      //               width: 30.0,
-      //             ),
-      //             onPressed: () {
-      //               Navigator.push(
-      //                 context,
-      //                 MaterialPageRoute(builder: (context) => const Camera()),
-      //               );
-      //             }),
-      //       ],
-      //     ),
-      //     SizedBox(
-      //       width: 18.0,
-      //     )
-      //   ],
-      // ),
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,

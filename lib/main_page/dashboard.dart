@@ -16,6 +16,8 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int currentIndex = 0;
+  // inisialisasi untuk menapilkan data firebase
+  // atau nama user
   var user = FirebaseAuth.instance.currentUser;
 
   late String userMail;
@@ -73,7 +75,8 @@ class _DashboardState extends State<Dashboard> {
                           children: [
                             GestureDetector(
                               child: Text(
-                                '${FirebaseAuth.instance.currentUser!.email}',
+                                FirebaseAuth.instance.currentUser?.email ??
+                                    'failed',
                                 // userId = user!.uid,
                                 // userMail = user.email,
                                 style: TextStyle(

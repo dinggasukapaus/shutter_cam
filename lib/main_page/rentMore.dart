@@ -4,6 +4,7 @@ import 'package:shutter_cam/main_page/cart.dart';
 import 'package:shutter_cam/main_page/history.dart';
 import 'package:shutter_cam/main_page/rent.dart';
 import 'package:shutter_cam/main_page/setAddress.dart';
+import 'package:shutter_cam/services/databaseService.dart';
 
 class RentMore extends StatefulWidget {
   const RentMore({Key? key}) : super(key: key);
@@ -235,7 +236,7 @@ class _RentMoreState extends State<RentMore> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Spesifikasi",
+                    "Deskripsi",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
@@ -272,7 +273,15 @@ class _RentMoreState extends State<RentMore> {
                           fontSize: 30,
                           color: Colors.black),
                     ),
+                    // proses create dan update
                     onPressed: () {
+                      DatabaseService.Rent("1",
+                          name: "Canon EOS 1300D",
+                          price: 2500000,
+                          timeRent: "perhari",
+                          spec: "pixel efektif :18mp",
+                          desc: "testing deskripsi");
+                      print("data berhasil ditambah");
                       Navigator.push(
                           context,
                           MaterialPageRoute(

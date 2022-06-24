@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shutter_cam/main_page/history.dart';
 import 'package:shutter_cam/main_page/setAddress.dart';
+import 'package:shutter_cam/services/databaseService.dart';
 
 class ArrangeRental extends StatefulWidget {
   const ArrangeRental({Key? key}) : super(key: key);
@@ -194,7 +195,7 @@ class _ArrangeRentalState extends State<ArrangeRental> {
                   title: const Text('Cash'),
                 ),
                 Text(
-                  "Metode Pembayaran",
+                  "Metode Penyewaan",
                   style: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -342,7 +343,15 @@ class _ArrangeRentalState extends State<ArrangeRental> {
                   fontSize: 30,
                   color: Colors.black),
             ),
+            // proses create dan update
             onPressed: () {
+              DatabaseService.Payment(
+                "1",
+                descP: "bisa dikirim cepat",
+                totalPrice: 5000000,
+                noteR: "Subtotal & Ongkos kirim",
+              );
+              print("data berhasil ditambah");
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const History()));
             },

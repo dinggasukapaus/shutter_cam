@@ -34,7 +34,7 @@ class _CameraState extends State<Camera> {
               } else {
                 Text("loading");
               }
-              return Text("nodata");
+              return Text("");
             },
           ),
           SizedBox(
@@ -72,7 +72,8 @@ class _CameraState extends State<Camera> {
                 onTap: () {
                   // fungsi untuk menambahkan data
                   DatabaseService.CreateOrUpdateProducts("1",
-                      name: "Canon EOS 1300DE", price: 700000);
+                      name: "Canon EOS 1300D update", price: 7500000);
+                  print("data berhasil ditambah");
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const RentMore()),

@@ -9,7 +9,9 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final textFieldFocusNode = FocusNode();
+  final textFieldFocusNode2 = FocusNode();
   bool _obscured = false;
+  bool _obscured2 = false;
 
   void _toggleObscured() {
     setState(() {
@@ -22,6 +24,18 @@ class _RegisterState extends State<Register> {
     });
   }
 
+  void _toggleObscured2() {
+    setState(() {
+      _obscured2 = !_obscured2;
+      if (textFieldFocusNode.hasPrimaryFocus) {
+        return;
+      } // If focus is on text field, dont unfocus
+      textFieldFocusNode.canRequestFocus =
+          false; // Prevents focus if tap on eye
+    });
+  }
+
+  // buat set value awal email dan password ""
   TextEditingController emailController = TextEditingController(text: "");
   TextEditingController passwordController = TextEditingController(text: "");
 
@@ -107,6 +121,7 @@ class _RegisterState extends State<Register> {
                                   height: 20,
                                 ),
                                 TextFormField(
+                                  // untuk menghandle value dari input email
                                   controller: emailController,
                                   decoration: const InputDecoration(
                                     floatingLabelBehavior:
@@ -161,12 +176,12 @@ class _RegisterState extends State<Register> {
                                 ),
                                 TextField(
                                   keyboardType: TextInputType.visiblePassword,
-                                  obscureText: _obscured,
-                                  focusNode: textFieldFocusNode,
+                                  obscureText: _obscured2,
+                                  focusNode: textFieldFocusNode2,
                                   decoration: InputDecoration(
                                     floatingLabelBehavior: FloatingLabelBehavior
                                         .never, //Hides label on focus or if filled
-                                    labelText: "Password",
+                                    labelText: "Passwordl ",
                                     filled:
                                         true, // Needed for adding a fill color
                                     fillColor: Colors.white,
@@ -180,7 +195,7 @@ class _RegisterState extends State<Register> {
                                       padding:
                                           const EdgeInsets.fromLTRB(0, 0, 4, 0),
                                       child: GestureDetector(
-                                        onTap: _toggleObscured,
+                                        onTap: _toggleObscured2,
                                         child: Icon(
                                           _obscured
                                               ? Icons.visibility_rounded
@@ -208,6 +223,7 @@ class _RegisterState extends State<Register> {
                                         color: Colors.black),
                                   ),
                                   onPressed: () async {
+                                    // mengirim value dari email dan password ke authservice
                                     await AuthServices.signUp(
                                         emailController.text,
                                         passwordController.text);

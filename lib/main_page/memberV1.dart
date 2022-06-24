@@ -236,7 +236,7 @@ peraturan dari otoritas terkait
                       SizedBox(
                         width: 70,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 275,
                         child: TextField(
                           decoration: InputDecoration(
